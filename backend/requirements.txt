@@ -1,0 +1,31 @@
+# ── Web framework ─────────────────────────────────────────────────────────────
+fastapi==0.135.2
+uvicorn[standard]
+python-multipart          # required for file uploads (UploadFile)
+
+# ── Database ───────────────────────────────────────────────────────────────────
+sqlalchemy
+
+# ── Config ────────────────────────────────────────────────────────────────────
+python-dotenv
+
+# ── AI providers ──────────────────────────────────────────────────────────────
+groq
+openai                    # optional — needed only when AI_PROVIDER=openai
+
+# ── RAG / Knowledge base ───────────────────────────────────────────────────────
+chromadb                  # vector database
+sentence-transformers     # local embeddings (all-MiniLM-L6-v2, ~90 MB)
+transformers<5            # compatible with torch 2.2.2 on macOS
+accelerate<1              # needed by sentence-transformers integrations
+peft<1                    # optional support for sentence-transformers peft hooks
+torch==2.2.2              # Mac wheel available in this environment
+numpy<2                   # avoid numpy 2.x incompatibility with torch 2.2.2
+
+# ── Document parsing ──────────────────────────────────────────────────────────
+pypdf                     # PDF text extraction
+python-docx               # DOCX text extraction
+
+# ── Web crawling ───────────────────────────────────────────────────────────────
+requests
+beautifulsoup4
