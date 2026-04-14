@@ -1,4 +1,5 @@
-const API = "http://127.0.0.1:8000";
+// Use the current hostname to work across the network
+const API = `${window.location.protocol}//${window.location.hostname}:${window.location.port || (window.location.protocol === 'https:' ? 443 : 80)}`;
 
 // ── Toast ──────────────────────────────────────────────────────────────────────
 function showToast(msg, type = "default") {

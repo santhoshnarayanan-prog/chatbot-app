@@ -1,4 +1,5 @@
-const API_URL = "http://127.0.0.1:8000/chat/";
+// Use the current hostname to work across the network
+const API_URL = `${window.location.protocol}//${window.location.hostname}:${window.location.port || (window.location.protocol === 'https:' ? 443 : 80)}/chat/`;
 
 const inputEl  = document.getElementById("user-input");
 const sendBtn  = document.getElementById("send-btn");
